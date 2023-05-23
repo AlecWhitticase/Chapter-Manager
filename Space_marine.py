@@ -1,5 +1,40 @@
 import random
 
+class Location():
+    def __init__(self, name):
+        self.name = name
+        self.panic = 0
+    def print_location(self):
+        return f"{self.name} {self.panic}"
+
+locations_name = [
+    "Hive Primus",
+    "Ebonspire",
+    "Necropolis Prime",
+    "Adamantine Reach",
+    "Hive Stygia",
+    "Obsidian Bastion",
+    "Ironheart Enclave",
+    "Hive Argentum",
+    "Verminopolis",
+    "Ashen Citadel",
+    "Hive Gehenna",
+    "Penumbral Hive",
+    "Hive Scoria",
+    "Ossuary Heights",
+    "Hive Crucible"
+]
+
+# Create an empty list to store Location objects
+locations = []
+
+# Iterate over locations_name
+for location_name in locations_name:
+    # Create a Location object with the current location_name
+    location = Location(location_name)
+    
+    # Append the Location object to the locations list
+    locations.append(location)
 
 ultramarine_names = [
     "Marneus Calgar",
@@ -188,7 +223,6 @@ class SpaceMarine:
 def generate_mission(number):
     #generates a random mission
     mission = []
-    mission = [random.randint(1,100),random.randint(1,100),random.randint(1,10)]
     return mission
 
 
@@ -265,11 +299,20 @@ def main():
     second_company = Company(generate_battle_company(),(0,0))
     chapter = [second_company,tenth_company]
     current_day = 1
-
     while current_day <= 100:
-        current_day = Day(current_day)
-        print(current_day.missions)
+        new_day = Day(current_day)
+        print(new_day.missions)
+        print(locations)
+        for place in locations:
+            print("1")
+            place.print_location()
+
+
+
+
         cheese = input("what the dog doin'")
+        if cheese == "end":
+            break
 
 
 main()
