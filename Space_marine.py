@@ -1,29 +1,13 @@
 import random
 
+import namelists.py
+
 class Location():
     def __init__(self, name):
         self.name = name
         self.panic = 0
     def print_location(self):
         return f"{self.name} {self.panic}"
-
-locations_name = [
-    "Hive Primus",
-    "Ebonspire",
-    "Necropolis Prime",
-    "Adamantine Reach",
-    "Hive Stygia",
-    "Obsidian Bastion",
-    "Ironheart Enclave",
-    "Hive Argentum",
-    "Verminopolis",
-    "Ashen Citadel",
-    "Hive Gehenna",
-    "Penumbral Hive",
-    "Hive Scoria",
-    "Ossuary Heights",
-    "Hive Crucible"
-]
 
 # Create an empty list to store Location objects
 locations = []
