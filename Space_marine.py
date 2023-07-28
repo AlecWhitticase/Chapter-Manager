@@ -1,6 +1,8 @@
 import random
+import namelists
 
-import namelists.py
+
+
 
 class Location():
     def __init__(self, name):
@@ -13,7 +15,7 @@ class Location():
 locations = []
 
 # Iterate over locations_name
-for location_name in locations_name:
+for location_name in namelists.locations_name:
     # Create a Location object with the current location_name
     location = Location(location_name)
     
@@ -206,7 +208,7 @@ class SpaceMarine:
 
 def generate_mission(number):
     #generates a random mission
-    mission = []
+    mission = ["Planet_name",random.randint(0,10),"foe"]
     return mission
 
 
@@ -283,20 +285,11 @@ def main():
     second_company = Company(generate_battle_company(),(0,0))
     chapter = [second_company,tenth_company]
     current_day = 1
-    while current_day <= 100:
+    while current_day <= 10:
         new_day = Day(current_day)
-        print(new_day.missions)
-        print(locations)
-        for place in locations:
-            print("1")
-            place.print_location()
-
-
-
-
-        cheese = input("what the dog doin'")
-        if cheese == "end":
-            break
+        missions = new_day.missions
+        print(missions)
+        day+=1
 
 
 main()
